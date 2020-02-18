@@ -8,10 +8,14 @@ import java.util.List;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        readInputFile("./resources/a_example.in");
+        List<List<Integer>> inputData = readInputFile("./resources/a_example.in");
+        System.out.println(inputData);
+
+        List<List<Integer>> outputData = inputData;
+        sendResultToJudgeSystem(outputData);
     }
 
-    private static void readInputFile(String filePath) {
+    private static List<List<Integer>> readInputFile(String filePath) {
         System.out.println("Reading file...");
         List<List<Integer>> listOfLists = new ArrayList<>();
         try {
@@ -23,9 +27,7 @@ public class HelloWorld {
             e.printStackTrace();
         }
 
-        System.out.println("Printing result");
-
-        System.out.println(listOfLists);
+        return listOfLists;
     }
 
     private static List<Integer> parseString(String str) {
@@ -35,5 +37,9 @@ public class HelloWorld {
             result.add(Integer.parseInt(strMas[i]));
         }
         return result;
+    }
+
+    private static void sendResultToJudgeSystem(List<List<Integer>> outputData) {
+        // ToDo здесь должна быть отправка результата на сервер
     }
 }
