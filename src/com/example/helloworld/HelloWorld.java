@@ -12,7 +12,8 @@ public class HelloWorld {
         System.out.println(inputData);
 
         List<List<Integer>> outputData = inputData;
-        sendResultToJudgeSystem(outputData);
+        //System.out.println(outputData.get(1).get(2));
+        writeResultFile(outputData, "./resources/a_example.out");
     }
 
     private static List<List<Integer>> readInputFile(String filePath) {
@@ -39,7 +40,14 @@ public class HelloWorld {
         return result;
     }
 
-    private static void sendResultToJudgeSystem(List<List<Integer>> outputData) {
-        // ToDo здесь должна быть отправка результата на сервер
+    private static void writeResultFile(List<List<Integer>> outputData, String filePath) {
+        // Доделать форматирование
+        System.out.println("Write result file...");
+        String stringOut = outputData.toString();
+        try {
+            Files.write(Paths.get(filePath), stringOut.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
