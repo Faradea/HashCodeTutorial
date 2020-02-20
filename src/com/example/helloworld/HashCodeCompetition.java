@@ -13,6 +13,7 @@ public class HashCodeCompetition {
 
     public static void main(String[] args) {
         List<List<Integer>> inputData = readInputFile("./resources/a_example.in");
+        //List<List<Integer>> inputData = readInputFile("./resources/f_libraries_of_the_world.txt");
         System.out.println(inputData);
 
         parseInputFile(inputData);
@@ -72,5 +73,10 @@ public class HashCodeCompetition {
         Calculation.days = days;
         List<Integer> processedArray = new ArrayList<Integer>();
         Calculation.processLib(processedArray,0);
+
+//        ResultSender.librariesCount = 50;
+//        List<ProcessedLibrary> processedLibraries = new ArrayList<ProcessedLibrary>;
+//        ProcessedLibrary processedLibrary = ProcessedLibrary()
+//        ResultSender.processedLibraries = ArrayList<>
     }
 }
