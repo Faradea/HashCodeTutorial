@@ -11,29 +11,30 @@ public class HashCodeCompetition {
     List<Integer> booksList = new ArrayList<Integer>();
     List<Library> librariesList = new ArrayList<Library>();
 
-    Integer x = 5;
-    Library library = new Library(new ArrayList<Integer>(x), 5, 5);
+
+
 
     public static void main(String[] args) {
         readInputFile("./resources/a_example.in");
+//        Integer x = 5;
+//        Library library = new Library(new ArrayList<Integer>(x), 5, 5);
     }
 
-    private static List<List<Integer>> readInputFile(String filePath) {
+    private static void readInputFile(String filePath) {
         System.out.println("Reading file...");
         int days = 0;
 
 
-        List<List<Integer>> listOfLists = new ArrayList<>();
+        List<List<Integer>> inputData = new ArrayList<>();
         try {
             Files.lines(Paths.get(filePath))
                     .forEach( line ->
-                            listOfLists.add(parseString(line))
+                            inputData.add(parseString(line))
                     );
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return listOfLists;
     }
 
     private static List<Integer> parseString(String str) {
