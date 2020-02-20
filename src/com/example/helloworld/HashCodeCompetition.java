@@ -55,11 +55,9 @@ public class HashCodeCompetition {
         for (int i = 2; i < inputData.size(); i = i + 2) {
 
             List<Integer> booksInLibrary = inputData.get(i+1);
-            Integer booksCount = inputData.get(i).get(0);
-            Integer signUpCost = inputData.get(i).get(1);
-            Integer booksPerDay = inputData.get(i).get(2);
 
-            Library library = new Library(booksInLibrary, booksCount, signUpCost, booksPerDay);
+            List<Integer> summary = inputData.get(i);
+            Library library = new Library(booksInLibrary, summary.get(0), summary.get(1), summary.get(2));
             librariesList.add(library);
         }
 

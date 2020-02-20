@@ -8,7 +8,7 @@ public class Library {
     public Integer booksPerDay;
     public Integer booksCount;
 
-    public Library(List<Integer> books, Integer signUpCost, Integer booksPerDay, Integer booksCount) {
+    public Library(List<Integer> books, Integer booksCount, Integer signUpCost, Integer booksPerDay) {
         this.books = books;
         this.signUpCost = signUpCost;
         this.booksPerDay = booksPerDay;
