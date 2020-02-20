@@ -72,5 +72,7 @@ public class HashCodeCompetition {
         Calculation.booksList = booksList;
         Calculation.librariesList = librariesList;
         Calculation.days = days;
+        List<Integer> processedArray = new ArrayList<Integer>();
+        Calculation.processLib(processedArray,0);
     }
 }

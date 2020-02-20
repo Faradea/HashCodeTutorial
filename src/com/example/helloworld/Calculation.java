@@ -22,17 +22,21 @@ public class Calculation {
     }
     public static int processLib(List<Integer> processedArray,int daysLeft)
     {
+        if(days<daysLeft) {
+            System.out.println(processedArray);
+            return 0;
+        }
+
         for(int i=0; i < librariesList.size(); i++) {
             if(processedArray.indexOf(i)>=0)
                 continue;
-            processedArray.add(i);
-            daysLeft+=librariesList.get(i).signUpCost;
             //int daysToProcess=librariesList.get(i).booksCount/librariesList.get(i).booksPerDay;
             //int devider=(librariesList.get(i).booksCount%librariesList.get(i).booksPerDay>0?1:0);
             ///List<SomeBean> newList = new ArrayList<SomeBean>(otherList);
-            daysLeft = processLib(processedArray,daysLeft);
+            processedArray.add(i);
+            processLib(processedArray,daysLeft+librariesList.get(i).signUpCost);
             processedArray.remove(processedArray.size()-1);
         }
-        return daysLeft;
+        return 0;
     }
 }
