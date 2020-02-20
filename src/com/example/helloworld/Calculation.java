@@ -6,9 +6,9 @@ import java.util.List;
 public class Calculation {
     static List<Integer> booksList = new ArrayList<Integer>();
     static List<Library> librariesList = new ArrayList<Library>();
+    static Integer days;
 
     public static void main(String[] args) {
-        int days = 0;
         int daysLeft=0;
 
         List<Integer> processedArray = new ArrayList<Integer>();
