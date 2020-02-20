@@ -50,7 +50,7 @@ public class HelloWorld {
         // 17 4
         // 2 5 6 8
 
-        String out=outputData.toString()
+        /*String out=outputData.toString()
                 .replace("], [","\n")
                 .replaceAll("\\[|\\]|,","");
 
@@ -76,6 +76,7 @@ public class HelloWorld {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+*/
 
     }
 }
