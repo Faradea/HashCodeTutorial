@@ -41,13 +41,41 @@ public class HelloWorld {
     }
 
     private static void writeResultFile(List<List<Integer>> outputData, String filePath) {
-        // Доделать форматирование
         System.out.println("Write result file...");
-        String stringOut = outputData.toString();
-        try {
-            Files.write(Paths.get(filePath), stringOut.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        // outputData = [[17, 4], [2, 5, 6, 8]]
+        //
+        // ---->
+        //
+        // 17 4
+        // 2 5 6 8
+
+        String out=outputData.toString()
+                .replace("], [","\n")
+                .replaceAll("\\[|\\]|,","");
+
+        final String[] out1 = {""};
+        outputData.forEach(
+             line ->
+             {
+                 line.forEach(element -> {
+                             out1[0] = out1[0].concat("" + element).concat(" ");
+                         }
+                 );
+                 out1[0] = out1[0].trim();
+                 out1[0] = out1[0].concat("\n");
+             }
+            );
+            out1[0] = out1[0].trim();
+
+
+
+        System.out.println(out1[0]);
+            try {
+                Files.write(Paths.get(filePath), out1[0].getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
     }
 }
