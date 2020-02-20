@@ -72,8 +72,8 @@ public class HashCodeCompetition {
         Calculation.librariesList = librariesList;
         Calculation.days = days;
         List<Integer> processedArray = new ArrayList<Integer>();
-        Calculation.processLib(processedArray,0);
-
+        Calculation.processLib(processedArray,0,0);
+        System.out.println("i");
 //        ResultSender.librariesCount = 50;
 //        List<ProcessedLibrary> processedLibraries = new ArrayList<ProcessedLibrary>;
 //        ProcessedLibrary processedLibrary = ProcessedLibrary()
