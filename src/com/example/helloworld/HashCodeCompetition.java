@@ -13,6 +13,10 @@ public class HashCodeCompetition {
 
     public static void main(String[] args) {
         List<List<Integer>> inputData = readInputFile("./resources/a_example.in");
+        //List<List<Integer>> inputData = readInputFile("./resources/b_read_on.txt");
+        //List<List<Integer>> inputData = readInputFile("./resources/c_incunabula.txt");
+        //List<List<Integer>> inputData = readInputFile("./resources/d_tough_choices.txt");
+        //List<List<Integer>> inputData = readInputFile("./resources/e_so_many_books.txt");
         //List<List<Integer>> inputData = readInputFile("./resources/f_libraries_of_the_world.txt");
         System.out.println(inputData);
 
@@ -27,7 +31,11 @@ public class HashCodeCompetition {
         try {
             Files.lines(Paths.get(filePath))
                     .forEach( line ->
-                            listOfLists.add(parseString(line))
+                            {
+                                if (line.isEmpty()) return;
+                                listOfLists.add(parseString(line));
+                            }
+
                     );
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,9 +82,14 @@ public class HashCodeCompetition {
         List<Integer> processedArray = new ArrayList<Integer>();
         Calculation.processLib(processedArray,0);
 
-//        ResultSender.librariesCount = 50;
-//        List<ProcessedLibrary> processedLibraries = new ArrayList<ProcessedLibrary>;
-//        ProcessedLibrary processedLibrary = ProcessedLibrary()
-//        ResultSender.processedLibraries = ArrayList<>
+        List<ProcessedLibrary> processedLibraries = new ArrayList<ProcessedLibrary>();
+        List<Integer> processedBooks = new ArrayList<Integer>();
+        processedBooks.add(8888);
+        processedBooks.add(7777);
+        ProcessedLibrary processedLibrary = new ProcessedLibrary(22, processedBooks);
+        processedLibraries.add(processedLibrary);
+        processedLibraries.add(processedLibrary);
+
+        ResultSender.generateOutput(50, processedLibraries);
     }
 }
